@@ -1,52 +1,72 @@
 # Linux System Call Visualizer
-A simple tool for visualizing Linux system calls
+A simple visualizer for Linux system calls
 
 ## What it does
 
-This project parses Linux system call events and visualizes them. I needed a simple way to inspect system call behavior and didn't find anything that fit the bill. So, I built this.
+This project provides a basic visual representation of Linux system calls, allowing you to see what happens under the hood when your program interacts with the kernel.
+
+It exists because I wanted to better understand the system call interface and see how my programs interact with the kernel.
 
 ## Install
 
+You can install it via pip with:
 ```bash
-pip3 install -r requirements.txt
+pip install linux-syscall-visualizer
 ```
 
 ## Usage
 
+To use it, simply run:
 ```bash
-./visualizer.py -h
+linux-syscall-visualizer
 ```
-
-This will print a help message with usage instructions. You can also specify a system call log file with the `-l` option.
+This will display a simple graph showing system calls made by your program.
 
 ## Build from source
 
+To build from source, clone this repository and run:
 ```bash
-git clone https://github.com/SamyAlderson/linux-syscall-visualizer.git
-cd linux-syscall-visualizer
-python3 setup.py build
+python setup.py build
+```
+Then, you can install it with:
+```bash
+pip install .
 ```
 
-## Run tests
+## Tests
 
+To run the tests, use:
 ```bash
-python3 -m unittest discover tests
+python -m unittest tests
 ```
+This will run all the unit tests in the `tests` directory.
 
-## Project structure
+## Project Structure
 
-* `src/visualizer.py`: System call parser and visualizer
-* `tests/test_visualizer.py`: Unit tests for the visualizer
-* `tests/test_data/`: Sample system call log files for testing
-* `requirements.txt`: Dependencies for running the project
-* `setup.py`: Build script for building the project
+* `linux_syscall_visualizer.py`: the main program
+* `tests.py`: the test suite
+* `setup.py`: the build script
+* `README.md`: this file
+* `LICENSE`: the license file
 
 ## License
 
 Copyright (c) 2026 SamyAlderson
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
